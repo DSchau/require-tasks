@@ -2,6 +2,7 @@
 
 [![Build Status](https://img.shields.io/npm/v/require-tasks.svg)](https://www.npmjs.com/package/require-tasks)
 [![Build Status](https://travis-ci.org/DSchau/require-tasks.svg?branch=master)](https://travis-ci.org/DSchau/require-tasks)
+[![David](https://img.shields.io/david/DSchau/require-tasks.svg)](https://david-dm.org/DSchau/require-tasks)
 
 > A tool to require a directory, and (optionally) inject each file in that directory with supplied arguments
 
