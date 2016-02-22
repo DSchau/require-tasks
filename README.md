@@ -2,13 +2,15 @@
 
 [![Build Status](https://travis-ci.org/DSchau/require-tasks.svg?branch=master)](https://travis-ci.org/DSchau/require-tasks)
 
-A tool to require a directory, and (optionally) inject each file in that directory with supplied arguments
+> A tool to require a directory, and (optionally) inject each file in that directory with supplied arguments
 
-## Usage
+## Install
 
 ```bash
 npm i require-tasks -D
 ```
+
+## Usage
 
 ```javascript
 import requireTasks from 'require-tasks';
