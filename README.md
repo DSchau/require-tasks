@@ -11,7 +11,7 @@ npm i require-tasks -D
 ```javascript
 import requireTasks from 'require-tasks';
 
-const tasks = requireTasks(['build/tasks']);
+const tasks = requireTasks(['build/tasks'])(); // any arguments passed will be made available to any task that exports a function
 ```
 
 `tasks` will be an object with each key representing the filename of every file in `build/tasks`. Additionally, any files that export an object (or a function that returns an object) will available as a property on the filename as the key.
