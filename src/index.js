@@ -3,15 +3,18 @@ import path from 'path';
 import requireDir from 'require-dir';
 import extend from 'extend';
 
-export default function(taskArr = [], options = {}) {
-  return function(...args) {
+import defaults from './defaults';
+
+export default function(taskArr = [], options = {}, requireDirOptions = {}) {
+  this.defaults = extend(defaults, options);
+  return (...args) => {
     const taskObj = {};
     [].concat(taskArr).forEach((taskPath) => {
-      const tasks = requireDir(path.resolve(taskPath), options);
+      const tasks = requireDir(path.resolve(taskPath), requireDirOptions);
       for ( const taskName in tasks ) {
         let task = tasks[taskName];
         if ( typeof (task.default || task) === 'function' ) {
-          if ( task.default ) {
+          if ( task.default && this.defaults.injectDefault ) {
             task.default = task.default(...args);
           } else {
             task = task(...args);

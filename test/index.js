@@ -7,7 +7,7 @@ describe('require-tasks', () => {
   const tasks = requireTasks([
     './test/fixtures/tests',
     './test/fixtures/tests-two'
-  ], { camelcase: true })(...args);
+  ], null, { camelcase: true })(...args);
 
   describe('object behavior', () => {
     it('merges objects withs same name', () => {
