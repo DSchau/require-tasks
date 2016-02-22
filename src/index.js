@@ -5,11 +5,11 @@ import extend from 'extend';
 
 import presets from './defaults';
 
-export default function(taskArr = [], options = {}, requireDirOptions = {}) {
+export default function requireTasks(taskArr = [], options = {}, requireDirOptions = {}) {
   const defaults = extend(presets, options);
-  return (...args) => {
+  return function inject(...args) {
     const taskObj = {};
-    [].concat(taskArr).forEach((taskPath) => {
+    ;[].concat(taskArr).forEach((taskPath) => {
       const tasks = requireDir(path.resolve(taskPath), requireDirOptions);
       for ( const taskName in tasks ) {
         let task = tasks[taskName];

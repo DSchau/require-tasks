@@ -39,7 +39,6 @@ describe('require-tasks', () => {
     });
 
     it('works with commonJs', () => {
-      const task = tasks['common-js'];
       expect(tasks.commonJs).to.be.defined;
       expect(tasks.commonJs()).to.equal('commonJs');
     });
