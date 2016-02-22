@@ -25,6 +25,11 @@ describe('require-tasks', () => {
       expect(tasks.args()).to.deep.equal(args);
     });
 
+    it('unwraps default function with supplied arguments (es6)', () => {
+      expect(tasks.es6).to.be.defined;
+      expect(tasks.es6.default()).to.equal('es6');
+    });
+
     it('extends function that returns object', () => {
       expect(tasks.extend).to.be.defined;
       expect(tasks.extend).to.have.keys([

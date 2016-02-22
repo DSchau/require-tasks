@@ -10,8 +10,12 @@ export default function(taskArr = [], options = {}) {
       const tasks = requireDir(path.resolve(taskPath), options);
       for ( const taskName in tasks ) {
         let task = tasks[taskName];
-        if ( typeof task === 'function' ) {
-          task = task(...args);
+        if ( typeof (task.default || task) === 'function' ) {
+          if ( task.default ) {
+            task.default = task.default(...args);
+          } else {
+            task = task(...args);
+          }
         }
 
         taskObj[taskName] = typeof task === 'object' ?
