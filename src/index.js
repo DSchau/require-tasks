@@ -28,4 +28,4 @@ export default function requireTasks(taskArr = [], options = {}, requireDirOptio
     });
     return taskObj;
   };
-};
+}
