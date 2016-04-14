@@ -15,7 +15,14 @@ For example, given the following directory structure:
       └── webpack.js
 ```
 
-this tool (when configured to search in `build/tasks`) will load each file in tasks, and will inject each task with supplied arguments.
+this tool (when configured to search in `build/tasks`) will load each file in tasks, and will inject each task with supplied arguments, and then return a structure like:
+
+```javascript
+{
+  copy() {}, // reference to what copy.js returns
+  webpack() {} // reference to what webpack.js returns
+}
+```
 
 ## Install
 
