@@ -1,6 +1,17 @@
 language: node_js
 node_js:
-  - '5'
-  - '4'
-  - '0.12'
-  - '0.10'
+  - stable
+
+cache:
+  yarn: true
+
+script: yarn test
+
+before_deploy: yarn deploy
+deploy:
+  provider: npm
+  email: dustinschau@gmail.com
+  api_key: $NPM_API_KEY
+  skip_cleanup: true
+  on:
+    tags: true
