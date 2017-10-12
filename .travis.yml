@@ -7,7 +7,9 @@ cache:
 
 script: yarn test
 
-before_deploy: yarn deploy
+before_deploy:
+  - yarn deploy
+  - cd dist
 deploy:
   provider: npm
   email: dustinschau@gmail.com
@@ -15,3 +17,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+after_deploy: cd ../

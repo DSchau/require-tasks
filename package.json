@@ -2,11 +2,12 @@
   "name": "require-tasks",
   "version": "1.0.0",
   "description": "A tool to load tasks (from a directory) and output contents as a mapped object",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "babel src --out-dir dist",
     "predeploy": "npm run build",
     "deploy": "bump-version",
+    "postdeploy": "cp .gitignore .npmignore README.md dist/",
     "test": "mocha --compilers js:babel-register test/*.js",
     "test-coverage": "babel-node ./node_modules/.bin/isparta cover _mocha",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
