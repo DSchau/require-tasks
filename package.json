@@ -1,6 +1,6 @@
 {
   "name": "require-tasks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool to load tasks (from a directory) and output contents as a mapped object",
   "main": "lib/index.js",
   "scripts": {
@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "extend": "^3.0.0",
-    "require-dir": "^0.3.0"
+    "require-dir": "^0.3.2"
   }
 }
